@@ -1,11 +1,11 @@
 import React from 'react';
 import './css/SchoolCard.css';
 
-function SchoolCard() {
+function SchoolCard(props) {
   return(
     <div className="col-4">
       <div className="card">
-        <h5 className="card-header">PASS SCHOOL NAME HERE</h5>
+        <h5 className="card-header">{props.school.ENTITY_NAME}</h5>
         <div className="card-body">
           <h5 className="card-title">
             <span className="badge">2017-18</span>
@@ -14,7 +14,12 @@ function SchoolCard() {
           </h5>
           <span className="badge badge-header">Student Data</span>
           <ul className="list-group">
-            <li className="list-group-item">Enrollment Data</li>
+            <li className="list-group-item">Enrollment Data
+                <li>Year: {props.school.YEAR}</li>
+                <li>Female: {props.school.NUM_FEMALE}</li>
+                <li>Male: {props.school.NUM_MALE}</li>
+                <li>SWD: {props.school.NUM_SWD}</li>
+            </li>
             <li className="list-group-item">3-8 ELA Assessment Data</li>
             <li className="list-group-item">3-8 Math Assessment Data</li>
           </ul>
